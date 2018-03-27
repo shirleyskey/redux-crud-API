@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ProductList from './../../components/ProductList/ProductList';
 import ProductItem from './../../components/ProductItem/ProductItem';
-import { actFetchProductsRequest, actDeleteProductRequest } from '../../actions/index';
+import { actFetchProductsRequest, actDeleteProductRequest, searchProductRequest } from '../../actions/index';
 
 class ProductListPage extends Component {
 
@@ -60,6 +60,9 @@ const mapDispatchToProps = (dispatch, props) => {
         },
         onDeleteProduct: (id) => {
             dispatch(actDeleteProductRequest(id));
+        },
+        searchProduct: (keywork) => {
+            dispatch(searchProductRequest(keywork))
         }
     }
 }

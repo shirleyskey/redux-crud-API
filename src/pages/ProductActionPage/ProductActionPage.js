@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import swal from 'sweetalert';
 import { actAddProductRequest, actUpdateProductRequest, actGetProductRequest } from '../../actions/index';
 
 class ProductActionPage extends Component {
@@ -58,8 +59,10 @@ class ProductActionPage extends Component {
             status: chkbStatus
         };
         if (id) {
+            swal("Good job!", "You clicked the button!", "success");
             this.props.onUpdateProduct(product);
         } else {
+            swal("Good job!", "You clicked the button!", "success");
             this.props.onAddProduct(product);
         }
         this.props.history.goBack();

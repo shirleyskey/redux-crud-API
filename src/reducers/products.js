@@ -8,6 +8,10 @@ const products = (state = initialState, action) => {
     switch (action.type) {
         case Types.FETCH_PRODUCTS:
             return [...action.products];
+        case Types.SEARCH_PRODUCTS:
+            return [...action.products];
+        case Types.FILTER_PRODUCT:
+            return [...action.products];
         case Types.ADD_PRODUCT:
             state.push(product);
             return [...state];
